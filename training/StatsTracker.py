@@ -18,8 +18,6 @@ class StatsTracker():
         if val_value is not None:
             self.val_hist.append(val_value)
             if val_value < self.best_val_loss_value:
-                print("save")
-                
                 self.best_val_loss_value = val_value
                 self.store_model(net)
 
