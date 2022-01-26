@@ -8,4 +8,5 @@ Implementations of commonly used utilities in Pytorch, to be used in my various 
 - OneHot Encoder class.
 
 ### To add:
-  - Make the stats tracker better, right now it's only useful for classification purposes
+  - Add checkpointing
+  - Add tensorboard utils (and by extension, figure out how to do basic tensorboard with torch)
