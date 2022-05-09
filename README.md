@@ -3,13 +3,10 @@ Implementations of commonly used utilities in Pytorch, to be used in my various 
 
 ---
 ### Currently Added: 
-None 
-
+- Early Stopping. Boolean flag which denotes whether training should continue. 
+- Stats tracker which keeps track of loss metrics and stores the best model throughout training
+- OneHot Encoder class.
 
 ### To add:
-- Early stopping
-- Checkpointer
-  - A class which keeps track of the various metrics during training and stores the best performance(s).
-  - Also stores the best weights of the model and can save it. 
-- OneHot Encoder class.
-- Util function to get model parameters
+  - Add checkpointing
+  - Add tensorboard utils (and by extension, figure out how to do basic tensorboard with torch)
