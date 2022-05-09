@@ -10,7 +10,7 @@ class StatsTracker():
         self.best_model = None
         self.best_val_value = 0.0
 
-    def update_histories(self, net, train_value=None, val_value=None, ):
+    def update_histories(self, net, train_value=None, val_value=None):
         if train_value is not None:
             self.train_hist.append(train_value)
         if val_value is not None:
