@@ -2,9 +2,8 @@ import unittest
 from cv2 import trace
 import torch
 from training.StatsTracker import StatsTracker
+
 class TestStatsTracker(unittest.TestCase):
-
-
     # Make sure inititalization is correct
     def test_init(self):
         tracker = StatsTracker(16, 32)
@@ -35,9 +34,19 @@ class TestStatsTracker(unittest.TestCase):
         self.assertEqual(tracker.val_loss_curr, (20*(21))/2)
 
     # Test mean computations
-    def test_val_loss_mean(self):
+    def test_train_loss_mean(self):
         # TODO
-        raise NotImplementedError
+        tracker = StatsTracker(39, 3)
+        for i in range(13):
+            tracker.update_curr_losses(i, None)
+        for j in range(42):
+            tracker.update_curr_losses(None, j)
+        
+        train_mean, val_mean = tracker.compute_means()
+
+        self.assertEqual(train_mean, 2.0)
+
+        self.assertEqual(val_mean, 287.0)
 
 if __name__ == '__main__':
     unittest.main()
